@@ -17,7 +17,7 @@ Erstellen Sie einen Account im AWS Academy Learner Lab und lernen Sie die Grundl
   - Verfolgen Sie den Budgetverbrauch und die verbleibende Zeit, bevor die Umgebung heruntergefahren wird.
   - Starten und stoppen Sie die Umgebung nach Bedarf.
   
-  ![AWS Academy Learner Lab](Images/1.jpeg)
+  ![AWS Academy Learner Lab](Images/1.png)
 
 ---
 
@@ -35,7 +35,7 @@ Erstellen Sie eine neue EC2-Instanz in AWS mit den folgenden Parametern:
   - **RAM-Größe**: 1 GB (t2.micro Standard)
   - **Anzahl der CPUs**: 1 (t2.micro Standard)
 
-  ![Instanz erfolgreich gestartet](images/2.jpeg)
+  ![Instanz erfolgreich gestartet](images/2.png)
 
 - **Instanzenübersicht**:
   - Die Instanz KN02 wird als aktiv und im Status "Läuft" angezeigt. Die öffentliche IP-Adresse ist sichtbar.

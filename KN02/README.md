@@ -27,7 +27,7 @@ Erstellen Sie eine neue EC2-Instanz in AWS mit den folgenden Parametern:
 - **Instanzname**: KN02
 - **Betriebssystem (OS)**: Ubuntu 24.04
 - **Instanztyp**: t2.micro
-- **Key-Pair**: Erstellen Sie zwei Schlüssel (vorname1 und vorname2) und wählen Sie vorname1 für den Zugriff.
+- **Key-Pair**: Erstellen Sie zwei Schlüssel (vorname1 und nachname1) und wählen Sie vorname1 für den Zugriff.
   
   #### Einstellungen der Instanz:
   - **Diskgröße**: Standardgröße für t2.micro Instanzen.
@@ -35,7 +35,7 @@ Erstellen Sie eine neue EC2-Instanz in AWS mit den folgenden Parametern:
   - **RAM-Größe**: 1 GB (t2.micro Standard)
   - **Anzahl der CPUs**: 1 (t2.micro Standard)
 
-  ![Instanz erfolgreich gestartet](images/2.png)
+  ![Instanz erfolgreich gestartet](images/7.png)
 
 - **Instanzenübersicht**:
   - Die Instanz KN02 wird als aktiv und im Status "Läuft" angezeigt. Die öffentliche IP-Adresse ist sichtbar.
@@ -52,8 +52,8 @@ Verwenden Sie SSH-Schlüssel, um sicher auf die Instanz zuzugreifen.
    - Der private Schlüssel wird lokal gespeichert und darf nicht verloren gehen. AWS speichert den privaten Schlüssel nicht; auf dem Server ist nur der öffentliche Schlüssel hinterlegt.
 
 2. **SSH-Verbindung zur Instanz**:
-   - Verbindung zur Instanz mithilfe des ersten Schlüssels (vorname1).
-   - Falls die Verbindung mit dem zweiten Schlüssel (vorname2) versucht wird, schlägt sie fehl, da nur vorname1 für den Zugriff autorisiert ist.
+   - Verbindung zur Instanz mithilfe des ersten Schlüssels (tim).
+   - Falls die Verbindung mit dem zweiten Schlüssel (fischer) versucht wird, schlägt sie fehl, da nur tim für den Zugriff autorisiert ist.
    
    - **Erfolgreicher SSH-Zugriff mit vorname1**:
      ![SSH Zugriff mit vorname1](Images/4.png)
@@ -62,8 +62,8 @@ Verwenden Sie SSH-Schlüssel, um sicher auf die Instanz zuzugreifen.
      ![SSH Fehler mit vorname2](Images/5.png)
 
 3. **Schlüsseldetails**:
-   - In den Details der Instanz ist sichtbar, dass der verwendete Schlüssel **vorname1** ist.
-
+   - In den Details der Instanz ist sichtbar, dass der verwendete Schlüssel **tim** ist.
+    ![SSH Fehler mit vorname2](Images/6.png)
 ---
 
 **Zusammenfassung**:
@@ -71,4 +71,3 @@ Durch die Nutzung von AWS EC2 und die Verwaltung von SSH-Schlüsseln konnte die 
 
 ---
 
-**Autor**: [Ihr Name]

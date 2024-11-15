@@ -64,8 +64,8 @@ Da VirtualBox auf einem bereits installierten Betriebssystem (macOS) läuft, han
    - Der Maschine wurde im Endeffekt 3 CPUs und 2GB Ram hinzugefügt.
 
 4. **Test der Zuweisungen**:
-   - CPU: Beim Befehl `lscpu | grep "CPU(s)"` zeigt die VM die zugewiesenen 3 Prozessoren korrekt an. !([Screenshot 3](Images/4.png))
-   - RAM: Die RAM-Zuweisung wird ebenfalls korrekt in der VM angezeigt. !([Screenshot 4](Images/6.png))
+   - CPU: Beim Befehl `lscpu | grep "CPU(s)"` zeigt die VM die zugewiesenen 3 Prozessoren korrekt an. ![Screenshot 3](Images/4.png)
+   - RAM: Die RAM-Zuweisung wird ebenfalls korrekt in der VM angezeigt. ![Screenshot 4](Images/6.png)
 
 5. **Fehlermeldungen**:
    - VirtualBox zeigte eine Warnung zur **ungültigen Konfiguration** beim Versuch, mehr Ressourcen zuzuweisen, als auf dem Host verfügbar sind. Dies ist auf die Architektur des M1-Chips zurückzuführen und auf die Einschränkungen eines Typ-2-Hypervisors, wie dokumentiert. ![Screenshot 5](Images/1.png) 

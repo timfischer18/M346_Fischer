@@ -59,7 +59,7 @@ Da VirtualBox auf einem bereits installierten Betriebssystem (macOS) läuft, han
 
 3. **Ressourcenzuweisung an die VM**:
    - Prozessoren: 3 CPUs wurden der VM zugewiesen, wie in [Screenshot 1](Images/1.png) gezeigt.
-   - RAM: Die VM erhielt 16 GB RAM, wie in [Screenshot 2](Images/2.png) gezeigt.
+   - RAM: Die VM erhielt 16 GB RAM, wie in ![Screenshot 2](Images/2.png) gezeigt.
 
 4. **Test der Zuweisungen**:
    - CPU: Beim Befehl `lscpu | grep "CPU(s)"` zeigt die VM die zugewiesenen 3 Prozessoren korrekt an ([Screenshot 3](Images/3.png)).

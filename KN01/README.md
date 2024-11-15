@@ -64,11 +64,11 @@ Da VirtualBox auf einem bereits installierten Betriebssystem (macOS) läuft, han
    - Der Maschine wurde im Endeffekt 3 CPUs und 2GB Ram hinzugefügt.
 
 4. **Test der Zuweisungen**:
-   - CPU: Beim Befehl `lscpu | grep "CPU(s)"` zeigt die VM die zugewiesenen 3 Prozessoren korrekt an ([Screenshot 3](Images/4.png)).
-   - RAM: Die RAM-Zuweisung wird ebenfalls korrekt in der VM angezeigt ([Screenshot 4](Images/6.png)).
+   - CPU: Beim Befehl `lscpu | grep "CPU(s)"` zeigt die VM die zugewiesenen 3 Prozessoren korrekt an. !([Screenshot 3](Images/4.png))
+   - RAM: Die RAM-Zuweisung wird ebenfalls korrekt in der VM angezeigt. !([Screenshot 4](Images/6.png))
 
 5. **Fehlermeldungen**:
-   - VirtualBox zeigte eine Warnung zur **ungültigen Konfiguration** beim Versuch, mehr Ressourcen zuzuweisen, als auf dem Host verfügbar sind. Dies ist auf die Architektur des M1-Chips zurückzuführen und auf die Einschränkungen eines Typ-2-Hypervisors, wie in [Screenshot 5](Images/1.png) dokumentiert.
+   - VirtualBox zeigte eine Warnung zur **ungültigen Konfiguration** beim Versuch, mehr Ressourcen zuzuweisen, als auf dem Host verfügbar sind. Dies ist auf die Architektur des M1-Chips zurückzuführen und auf die Einschränkungen eines Typ-2-Hypervisors, wie dokumentiert. ![Screenshot 5](Images/1.png) 
 
 ### Analyse und Schlussfolgerung
 Die durchgeführten Tests bestätigten, dass es sich bei VirtualBox auf einem M1-Mac um einen **Hypervisor Typ 2** handelt. Ein Hosted Hypervisor kann nicht direkt auf die Hardware zugreifen und ist daher in der Ressourcenzuweisung eingeschränkt. Da VirtualBox auf macOS läuft, muss es sich auf die Ressourcenverwaltung des Host-OS verlassen. Dies führt dazu, dass die maximale Ressourcenzuweisung durch das Host-Betriebssystem limitiert wird, was die Beobachtungen erklärt.

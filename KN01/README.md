@@ -43,9 +43,34 @@ Ein **Hypervisor**, auch bekannt als Virtual Machine Monitor (VMM), ist eine Sof
 
 ---
 
-## Fazit
-Hypervisoren sind essenzielle Technologien für die Virtualisierung. Während Typ-1-Hypervisoren eine leistungsstarke Lösung für Server und Rechenzentren bieten, eignen sich Typ-2-Hypervisoren besser für lokale Umgebungen und Testzwecke. Beide Typen haben ihre spezifischen Vor- und Nachteile und finden in verschiedenen Szenarien Anwendung.
+## Praktische Anwendung: Virtualisierungssoftware (70%)
+
+Für diesen Auftrag wurde ein **Apple MacBook mit M1 Max** verwendet, und die Virtualisierungssoftware **VirtualBox** kam zum Einsatz.
+
+### Vermutung: Hypervisor Typ
+Da VirtualBox auf einem bereits installierten Betriebssystem (macOS) läuft, handelt es sich höchstwahrscheinlich um einen **Hypervisor Typ 2 (Hosted Hypervisor)**.
+
+### Schritt-für-Schritt Dokumentation
+1. **Ermittlung der Host-Ressourcen**:
+   - Der MacBook M1 Max verfügt über insgesamt 16 logische Prozessoren und 64 GB RAM.
+
+2. **Erstellung einer virtuellen Maschine**:
+   - Es wurde eine virtuelle Maschine mit dem Betriebssystem **Debian** erstellt.
+
+3. **Ressourcenzuweisung an die VM**:
+   - Prozessoren: 3 CPUs wurden der VM zugewiesen, wie in [Screenshot 1](images/1.png) gezeigt.
+   - RAM: Die VM erhielt 16 GB RAM, wie in [Screenshot 2](images/2.png) gezeigt.
+
+4. **Test der Zuweisungen**:
+   - CPU: Beim Befehl `lscpu | grep "CPU(s)"` zeigt die VM die zugewiesenen 3 Prozessoren korrekt an ([Screenshot 3](images/3.png)).
+   - RAM: Die RAM-Zuweisung wird ebenfalls korrekt in der VM angezeigt ([Screenshot 4](images/4.png)).
+
+5. **Fehlermeldungen**:
+   - VirtualBox zeigte eine Warnung zur **ungültigen Konfiguration** beim Versuch, mehr Ressourcen zuzuweisen, als auf dem Host verfügbar sind. Dies ist auf die Architektur des M1-Chips zurückzuführen und auf die Einschränkungen eines Typ-2-Hypervisors, wie in [Screenshot 5](images/5.png) dokumentiert.
+
+### Analyse und Schlussfolgerung
+Die durchgeführten Tests bestätigten, dass es sich bei VirtualBox auf einem M1-Mac um einen **Hypervisor Typ 2** handelt. Ein Hosted Hypervisor kann nicht direkt auf die Hardware zugreifen und ist daher in der Ressourcenzuweisung eingeschränkt. Da VirtualBox auf macOS läuft, muss es sich auf die Ressourcenverwaltung des Host-OS verlassen. Dies führt dazu, dass die maximale Ressourcenzuweisung durch das Host-Betriebssystem limitiert wird, was die Beobachtungen erklärt.
 
 ---
 
-**Autor**: [Ihr Name]
+**Autor**: [Tim]

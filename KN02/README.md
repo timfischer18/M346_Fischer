@@ -17,7 +17,7 @@ Erstellen Sie einen Account im AWS Academy Learner Lab und lernen Sie die Grundl
   - Verfolgen Sie den Budgetverbrauch und die verbleibende Zeit, bevor die Umgebung heruntergefahren wird.
   - Starten und stoppen Sie die Umgebung nach Bedarf.
   
-  ![AWS Academy Learner Lab](images/1.jpeg)
+  ![AWS Academy Learner Lab](Images/1.jpeg)
 
 ---
 
@@ -40,7 +40,7 @@ Erstellen Sie eine neue EC2-Instanz in AWS mit den folgenden Parametern:
 - **Instanzenübersicht**:
   - Die Instanz KN02 wird als aktiv und im Status "Läuft" angezeigt. Die öffentliche IP-Adresse ist sichtbar.
 
-  ![Instanzenliste](images/3.png)
+  ![Instanzenliste](Images/3.png)
 
 ---
 
@@ -56,10 +56,10 @@ Verwenden Sie SSH-Schlüssel, um sicher auf die Instanz zuzugreifen.
    - Falls die Verbindung mit dem zweiten Schlüssel (vorname2) versucht wird, schlägt sie fehl, da nur vorname1 für den Zugriff autorisiert ist.
    
    - **Erfolgreicher SSH-Zugriff mit vorname1**:
-     ![SSH Zugriff mit vorname1](images/4.png)
+     ![SSH Zugriff mit vorname1](Images/4.png)
 
    - **Fehlgeschlagener SSH-Zugriff mit vorname2**:
-     ![SSH Fehler mit vorname2](images/5.png)
+     ![SSH Fehler mit vorname2](Images/5.png)
 
 3. **Schlüsseldetails**:
    - In den Details der Instanz ist sichtbar, dass der verwendete Schlüssel **vorname1** ist.

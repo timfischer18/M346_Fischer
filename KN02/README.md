@@ -58,7 +58,7 @@ Verwenden Sie SSH-Schlüssel, um sicher auf die Instanz zuzugreifen.
    - **Erfolgreicher SSH-Zugriff mit vorname1**:
      ![SSH Zugriff mit vorname1](Images/4.png)
 
-   - **Fehlgeschlagener SSH-Zugriff mit vorname2**:
+   - **Fehlgeschlagener SSH-Zugriff mit nachname**:
      ![SSH Fehler mit vorname2](Images/5.png)
 
 3. **Schlüsseldetails**:

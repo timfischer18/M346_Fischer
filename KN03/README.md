@@ -59,16 +59,16 @@
    - **URL**: `http://[Ihre-IP]/index.html`
    - Erfolgreicher Zugriff zeigt die Apache-Standardseite an.
 
-   ![Apache Standardseite](images/index.htmlSeite.jpeg)
+   ![Apache Standardseite](images/index.htmlSeite.png)
 
 2. **Überprüfung der PHP-Installation**:
    - **URL**: `http://[Ihre-IP]/info.php`
    - Zeigt PHP-Details an, was die korrekte Installation von PHP bestätigt.
 
-   ![PHP Info Seite](images/info.phpSeite.jpeg)
+   ![PHP Info Seite](images/info.phpSeite.png)
 
 3. **Überprüfung der Datenbankverbindung**:
    - **URL**: `http://[Ihre-IP]/db.php`
    - Listet die Datenbankbenutzer auf, was zeigt, dass die Datenbankverbindung funktioniert.
 
-   ![Datenbank-Verbindung](images/db.phpSeite.jpeg)
+   ![Datenbank-Verbindung](images/db.phpSeite.png)

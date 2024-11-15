@@ -72,3 +72,8 @@
    - Listet die Datenbankbenutzer auf, was zeigt, dass die Datenbankverbindung funktioniert.
 
    ![Datenbank-Verbindung](images/db.phpSeite.png)
+
+4. **MySql Login**:
+   - Login in MySql Service
+
+   ![Datenbank-Verbindung](images/mysqlLogin.png)

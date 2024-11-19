@@ -1,4 +1,3 @@
-```
 #cloud-config
 # Benutzerkonfiguration
 users:
@@ -13,7 +12,7 @@ users:
     shell: /bin/bash
     # Öffentliche SSH-Schlüssel für den Benutzer
     ssh_authorized_keys:
-      - ssh-rsa aws-key       
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDNR9R127WUjX8ldgJe+lJ8EuPKKySGkLbg2P5tIhmE7k6KoqF/C6MytbZ4/1APQcdkf0bZ/seIbOeTAaD3ahY1ELywbw34jycTo6LpkkxLHhwO5pGDkEfyUSmKGxFY7fRFeRhxcDGJZ2e1nGEt85PhBUdgx2OerB7gsIKzgONmQq6Qyy1H9JZZ0mzLmYK7IsusS/C6mj7eSBX/eZcCFUKzP6FQ2Q1SKKKNobA5/WiHKrHI4B5/MqpYrqHXIJZyprWZopmmyR8u1DByIPlzWAowbJAnbg5Tax/z7M2gkbb63oHEO1u8dSP1HiqmWzHi0k/UzzLakcbNQoCsXQKtQ/2H aws-key       
 # Kennwort-basierte SSH-Anmeldung deaktivieren
 ssh_pwauth: false
 # Root-Benutzer deaktivieren
@@ -23,12 +22,4 @@ package_update: true
 # Pakete installieren
 packages:
   - curl 
-  - wget```
-
-
-
-
-
-
-
-  
+  - wget

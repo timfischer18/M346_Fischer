@@ -1,11 +1,4 @@
 #cloud-config
-package_update: true
-packages:
-  - apache2
-  - php
-  - libapache2-mod-php
-  - adminer
-
 users:
   - name: ubuntu
     sudo: ALL=(ALL) NOPASSWD:ALL
@@ -13,34 +6,36 @@ users:
     home: /home/ubuntu
     shell: /bin/bash
     ssh_authorized_keys:
-      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDNR9R127WUjX8ldgJe+lJ8EuPKKySGkLbg2P5tIhmE7k6KoqF/C6MytbZ4/1APQcdkf0bZ/seIbOeTAaD3ahY1ELywbw34jycTo6LpkkxLHhwO5pGDkEfyUSmKGxFY7fRFeRhxcDGJZ2e1nGEt85PhBUdgx2OerB7gsIKzgONmQq6Qyy1H9JZZ0mzLmYK7IsusS/C6mj7eSBX/eZcCFUKzP6FQ2Q1SKKKNobA5/WiHKrHI4B5/MqpYrqHXIJZyprWZopmmyR8u1DByIPlzWAowbJAnbg5Tax/z7M2gkbb63oHEO1u8dSP1HiqmWzHi0k/UzzLakcbNQoCsXQKtQ/2H aws-key-tim
-      - |
-        -----BEGIN RSA PUBLIC KEY-----
-        MIIBCgKCAQEA8lshkw886qvWI7jKrK3F0TIWVawmw/nJy9mC6Uy205Yto13F+piE
-        llc6z0FhJBeTj1glbVqVKchII8Hu5uxOc76SNGxoj63c6z5juUjIRSNIESSuVXSR
-        FZefVwqJW+Lnqod3ML6W19pDFfH6tOFmPkqPJhhZWfhAfknb1pIHc3XtCjqF/KWU
-        I3v6w+hqRxfSY7pdO+Q9ZJpUuGlJVJhpDN3OmeY/6YS48k0Wsijg/3WckxFUhmWk
-        vXLHd0Lv2/fKqB/Vabxu/q4vkTTIdyGJCKTkSY4ZQscb2+rk0fPVnLzU/eJDQQNB
-        lBAkJILhJS48fVkkdEcIpnzr+G/hMI/7FwIDAQAB
-        -----END RSA PUBLIC KEY-----
-
+      - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA7yukc76PfGh3+5t9DFKlsgy...
+      - lehrer key 
+    ssh_pwauth: false
+disable_root: true
+package_update: true
+package_upgrade: true
+packages:
+  - apache2
+  - php
+  - php-mysql
+  - adminer
+  - mysql-client
+  - curl
+  - wget
 write_files:
   - path: /var/www/html/index.html
     content: |
       <html>
-      <head><title>Willkommen</title></head>
-      <body>
-        <h1>Willkommen auf dem Webserver!</h1>
-      </body>
+      <head><title>Webserver</title></head>
+      <body><h1>Webserver läuft!</h1></body>
       </html>
-    permissions: '0644'
-
+  - path: /var/www/html/info.php
+    content: |
+      <?php phpinfo(); ?>
   - path: /var/www/html/db.php
     content: |
       <?php
-      $servername = "3.83.121.239";
+      $servername = "IP"; // Private IP des DB-Servers
       $username = "admin";
-      $password = "admin";
+      $password = "Passwort";
       $dbname = "MainDatabase";
 
       $conn = new mysqli($servername, $username, $password, $dbname);
@@ -48,10 +43,9 @@ write_files:
       if ($conn->connect_error) {
           die("Connection failed: " . $conn->connect_error);
       }
-      echo "Connected successfully to the database.";
+      echo "Connected successfully";
       ?>
-    permissions: '0644'
-
 runcmd:
-  - a2enconf adminer
-  - systemctl restart apache2
+  - sudo a2enconf adminer
+  - sudo systemctl restart apache2
+  - echo "Cloud-Init Web erfolgreich abgeschlossen" > /home/ubuntu/init.log

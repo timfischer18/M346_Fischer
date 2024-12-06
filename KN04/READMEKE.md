@@ -105,6 +105,12 @@ Status: inactive
 2. **Netcat-Test erfolgreich:**
    ![Netcat-Test](./images/netcat_test.png)
 
+
+## Adminer
+1. **Adminer-Verbindung erfolgreich:**
+   ![Adminer-Verbindung](./images/adminer-open.png)
+2. **Adminer-DB Connect erfolgreich:**
+   ![Adminer DB connect](./images/adminer-db-connect.png)
 ---
 
 ## Hinweise

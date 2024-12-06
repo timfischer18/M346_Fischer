@@ -224,7 +224,7 @@ Ausgabe:
      Active: active (running) since Fri 2024-12-06 10:05:20 UTC; 1min 13s ago
 ```
 
-![MySQL-Dienst](./images/mysql_service_status.png)
+
 
 ### UFW-Status
 Die Firewall (`ufw`) ist auf der Datenbankinstanz deaktiviert:

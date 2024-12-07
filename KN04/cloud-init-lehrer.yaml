@@ -1,4 +1,4 @@
----
+#cloud-config
 users:
   - name: ubuntu
     sudo: ALL=(ALL) NOPASSWD:ALL
@@ -6,18 +6,8 @@ users:
     home: /home/ubuntu
     shell: /bin/bash
     ssh_authorized_keys:
-      - ssh-rsa
-        AAAAB3NzaC1yc2EAAAADAQABAAABAQDNR9R127WUjX8ldgJe+lJ8EuPKKySGkLbg2P5tIhmE7k6KoqF/C6MytbZ4/1APQcdkf0bZ/seIbOeTAaD3ahY1ELywbw34jycTo6LpkkxLHhwO5pGDkEfyUSmKGxFY7fRFeRhxcDGJZ2e1nGEt85PhBUdgx2OerB7gsIKzgONmQq6Qyy1H9JZZ0mzLmYK7IsusS/C6mj7eSBX/eZcCFUKzP6FQ2Q1SKKKNobA5/WiHKrHI4B5/MqpYrqHXIJZyprWZopmmyR8u1DByIPlzWAowbJAnbg5Tax/z7M2gkbb63oHEO1u8dSP1HiqmWzHi0k/UzzLakcbNQoCsXQKtQ/2H
-        aws-key-tim
-      - |
-        -----BEGIN RSA PUBLIC KEY-----
-        MIIBCgKCAQEA8lshkw886qvWI7jKrK3F0TIWVawmw/nJy9mC6Uy205Yto13F+piE
-        llc6z0FhJBeTj1glbVqVKchII8Hu5uxOc76SNGxoj63c6z5juUjIRSNIESSuVXSR
-        FZefVwqJW+Lnqod3ML6W19pDFfH6tOFmPkqPJhhZWfhAfknb1pIHc3XtCjqF/KWU
-        I3v6w+hqRxfSY7pdO+Q9ZJpUuGlJVJhpDN3OmeY/6YS48k0Wsijg/3WckxFUhmWk
-        vXLHd0Lv2/fKqB/Vabxu/q4vkTTIdyGJCKTkSY4ZQscb2+rk0fPVnLzU/eJDQQNB
-        lBAkJILhJS48fVkkdEcIpnzr+G/hMI/7FwIDAQAB
-        -----END RSA PUBLIC KEY-----  # Öffentlicher Schlüssel der Lehrperson
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDNR9R127WUjX8ldgJe+lJ8EuPKKySGkLbg2P5tIhmE7k6KoqF/C6MytbZ4/1APQcdkf0bZ/seIbOeTAaD3ahY1ELywbw34jycTo6LpkkxLHhwO5pGDkEfyUSmKGxFY7fRFeRhxcDGJZ2e1nGEt85PhBUdgx2OerB7gsIKzgONmQq6Qyy1H9JZZ0mzLmYK7IsusS/C6mj7eSBX/eZcCFUKzP6FQ2Q1SKKKNobA5/WiHKrHI4B5/MqpYrqHXIJZyprWZopmmyR8u1DByIPlzWAowbJAnbg5Tax/z7M2gkbb63oHEO1u8dSP1HiqmWzHi0k/UzzLakcbNQoCsXQKtQ/2H aws-key-tim
+      - ssh-rsa MIIBCgKCAQEA8lshkw886qvWI7jKrK3F0TIWVawmw/nJy9mC6Uy205Yto13F+piEllc6z0FhJBeTj1glbVqVKchII8Hu5uxOc76SNGxoj63c6z5juUjIRSNIESSuVXSRFZefVwqJW+Lnqod3ML6W19pDFfH6tOFmPkqPJhhZWfhAfknb1pIHc3XtCjqF/KWUI3v6w+hqRxfSY7pdO+Q9ZJpUuGlJVJhpDN3OmeY/6YS48k0Wsijg/3WckxFUhmWkvXLHd0Lv2/fKqB/Vabxu/q4vkTTIdyGJCKTkSY4ZQscb2+rk0fPVnLzU/eJDQQNBlBAkJILhJS48fVkkdEcIpnzr+G/hMI/7FwIDAQAB aws-key-lehrer
 ssh_pwauth: false
 disable_root: true
 package_update: true

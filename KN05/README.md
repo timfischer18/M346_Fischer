@@ -25,7 +25,7 @@ Beide Instanzen wurden im Subnetz `172.31.176.0/20` erstellt. Die private IPs wu
   - **HTTPS (Port 443):** Zugriff von überall (0.0.0.0/0).
   
 - **Screenshot der Inbound-Regeln:**
-  ![Sicherheitsgruppe Webserver](screenshots/webserver_security_group.png)
+  ![Sicherheitsgruppe Webserver](./screenshots/webserver_security_group.png)
 
 ### **2.2 Sicherheitsgruppe für den Datenbankserver**
 - **Eingehende Regeln:**

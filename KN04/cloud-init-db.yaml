@@ -2,14 +2,11 @@
 package_update: true
 packages:
   - mysql-server
-
 runcmd:
-  # Externe Verbindungen erlauben
-  - sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mysql/mariadb.conf.d/50-server.cnf
-  - systemctl restart mysql
-  
-  # Benutzer und Passwort für die Datenbank setzen
-  - mysql -e "CREATE DATABASE MainDatabase;"
-  - mysql -e "CREATE USER 'admin'@'%' IDENTIFIED BY 'admin';"
-  - mysql -e "GRANT ALL PRIVILEGES ON MainDatabase.* TO 'admin'@'%';"
-  - mysql -e "FLUSH PRIVILEGES;"
+  - sudo apt update
+  - sudo sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mysql/mariadb.conf.d/50-server.cnf
+  - sudo systemctl restart mysql
+  - sudo mysql -e "CREATE DATABASE MainDatabase;"
+  - sudo mysql -e "CREATE USER 'admin'@'%' IDENTIFIED BY 'admin';"
+  - sudo mysql -e "GRANT ALL PRIVILEGES ON MainDatabase.* TO 'admin'@'%';"
+  - sudo mysql -e "FLUSH PRIVILEGES;"

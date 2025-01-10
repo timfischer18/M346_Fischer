@@ -70,27 +70,12 @@ Beide Instanzen wurden im Subnetz `172.31.176.0/20` erstellt. Die private IPs wu
   - **Screenshot der erfolgreichen Verbindung:**
     ![Datenbankverbindung](screenshots/db_connection.png)
 
----
-
-## **5. Apache und Firewall**
-
-### **5.1 Apache-Status**
-- **Status:**
-  Apache läuft und verarbeitet Anfragen erfolgreich.
-  - **Screenshot:**
-    ![Apache-Status](screenshots/apache_status.png)
-
-### **5.2 Firewall-Konfiguration**
-- **Status:**
-  UFW wurde aktiviert und HTTP/HTTPS (Ports 80/443) wurden freigegeben.
-  - **Screenshot:**
-    ![Firewall-Status](screenshots/ufw_status.png)
 
 ---
 
-## **6. Dateien auf dem Webserver**
+## **5. Dateien auf dem Webserver**
 
-### **6.1 `db_test.php`**
+### **5.1 `db_test.php`**
 **Inhalt der Datei `db_test.php`:**
 ```php
 <?php
@@ -107,13 +92,9 @@ if ($conn->connect_error) {
 echo "Verbindung zur Datenbank erfolgreich hergestellt!";
 ?>
 ```
-
-**Screenshot der Datei:**
-![db_test.php](screenshots/db_test_php.png)
-
 ---
 
-## **7. Ergebnis**
+## **6. Ergebnis**
 - Webserver und Datenbankserver wurden erfolgreich eingerichtet.
 - Verbindung zwischen Webserver und Datenbankserver getestet und bestätigt.
 - Sicherheitsrichtlinien wurden korrekt implementiert.

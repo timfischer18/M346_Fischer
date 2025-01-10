@@ -32,7 +32,7 @@ Beide Instanzen wurden im Subnetz `172.31.176.0/20` erstellt. Die private IPs wu
   - **MySQL (Port 3306):** Zugriff nur von der privaten IP des Webservers (`172.31.176.50/32`).
 
 - **Screenshot der Inbound-Regeln:**
-  ![Sicherheitsgruppe Datenbankserver](screenshots/dbserver_security_group.png)
+  ![Sicherheitsgruppe Datenbankserver](./screenshots/dbserver_security_group.png)
 
 ---
 
@@ -47,7 +47,7 @@ Beide Instanzen wurden im Subnetz `172.31.176.0/20` erstellt. Die private IPs wu
   - `db.php`: Testverbindung zur Datenbank.
 
 **Screenshot der Webserver-Dateien:**
-![Webserver-Dateien](screenshots/webserver_files.png)
+![Webserver-Dateien](./screenshots/webserver_files.png)
 
 ### **3.2 Datenbankserver**
 - **Paketinstallation:**
@@ -68,7 +68,7 @@ Beide Instanzen wurden im Subnetz `172.31.176.0/20` erstellt. Die private IPs wu
     mysql -h 172.31.176.30 -u admin -p
     ```
   - **Screenshot der erfolgreichen Verbindung:**
-    ![Datenbankverbindung](screenshots/db_connection.png)
+    ![Datenbankverbindung](./screenshots/db_connection.png)
 
 
 ---
@@ -100,7 +100,7 @@ echo "Verbindung zur Datenbank erfolgreich hergestellt!";
 - Sicherheitsrichtlinien wurden korrekt implementiert.
 
 **Screenshot der erfolgreichen Verbindung im Browser:**
-![Erfolgreiche Verbindung](screenshots/success_connection.png)
+![Erfolgreiche Verbindung](./screenshots/success_connection.png)
 
 ---
 

@@ -69,7 +69,6 @@ Die Applikation wurde mit folgendem Befehl manuell gestartet:
 ```bash
 sudo java -jar /var/www/app/shopdemo-1.0.0.jar --spring.config.additional-location=/var/www/app/production.properties
 ```
-
 Die Logs zeigten an, dass die Applikation erfolgreich gestartet wurde und auf Port 5001 läuft.
 
 ![](./screenshots/application-logs.png)
@@ -136,16 +135,61 @@ mongosh "mongodb+srv://timfischer:y9S2q8YUcTC6Wvvv@kn10.ihk8m.mongodb.net/shopDB
 
 ![](./screenshots/mongodb-collection.png)
 
+---
+## Volumen/Typ wechsel
+### **Wechsel von Volumen**
+![Load Balancer Screenshot](./screenshots/volumechange.png)
+![Load Balancer Screenshot](./screenshots/volumeterminal.png)
+![Load Balancer Screenshot](./screenshots/medium.png)
+## Horizontale Skalierung mit Auto Scaling
+
+### **1. Einrichtung eines Load Balancers**
+- Ein **Application Load Balancer** wurde erstellt, um den Traffic auf mehrere Instanzen zu verteilen.
+- **DNS-Name des Load Balancers:** `KN06-LoadBalancer-123456.elb.amazonaws.com`
+- **Target Group:**
+  - Health Check Path: `/swagger-ui/index.html`
+  - Verknüpfte Instanzen: Zwei Instanzen (`KN06` und eine zusätzliche Kopie).
+
+
+**Screenshot: Swagger-UI über den Load Balancer**  
+![Swagger-UI Screenshot](./screenshots/swagger_ui_load_balancer.png)
+
+---
+
+### **2. Horizontale Skalierung mit Auto Scaling**
+#### **2.1 Launch Template**
+- Ein **Launch Template** wurde basierend auf dem bestehenden AMI erstellt.
+- **Details:**
+  - Instanztyp: `t2.medium`
+  - Sicherheitsgruppen: HTTP (Port 80) und 5001 für internen Traffic.
+  - VPC und Subnet: Gleich wie die bestehende Umgebung.
+
+#### **2.2 Auto-Scaling-Gruppe**
+- Eine Auto-Scaling-Gruppe wurde eingerichtet, um sicherzustellen, dass immer **mindestens 2 Instanzen** aktiv sind:
+  - **Desired Capacity:** 2
+  - **Minimum Capacity:** 2
+  - **Maximum Capacity:** 5
+  - **Scaling Policies:** 
+    - Neue Instanz starten, wenn die CPU-Auslastung über 75% steigt.
+    - Eine Instanz entfernen, wenn die CPU-Auslastung unter 25% fällt.
+
+**Screenshot: Auto Scaling Gruppe Konfiguration**  
+![Auto Scaling Gruppe Screenshot](./screenshots/auto_scaling_group.png)
+
+---
+
+### **3. Test der Auto-Scaling-Funktionalität**
+- Eine Instanz wurde manuell gestoppt, um den Ausfallschutz zu testen.
+- **Ergebnis:** Die Auto-Scaling-Gruppe startete automatisch eine neue Instanz, um die gewünschte Anzahl von 2 Instanzen beizubehalten.
+
+**Screenshot: Neue Instanz durch Auto Scaling**  
+![Neue Instanz Screenshot](./screenshots/new_instance_auto_scaling.png)
+
 
 ---
 
 ## Fazit
-Das Projekt wurde erfolgreich umgesetzt:
-- Die Java-Applikation wurde bereitgestellt und konfiguriert.
-- Nginx leitet Anfragen auf Port 80 korrekt an die Applikation weiter.
-- Die Verbindung zur MongoDB-Datenbank funktioniert.
-- Swagger-UI und API-Endpunkte sind erreichbar.
+- Die Java-Applikation wurde erfolgreich bereitgestellt und kann horizontal skaliert werden.
+- Mit Auto Scaling ist die Umgebung vor Ausfällen geschützt.
+- Der Load Balancer verteilt den Traffic gleichmäßig auf die verfügbaren Instanzen.
 
-### Offene Fragen oder Verbesserungsmöglichkeiten:
-- Automatisierung mit einem Systemd-Service für die Applikation.
-- Optimierung der Sicherheitsgruppen und Firewalleinstellungen.
